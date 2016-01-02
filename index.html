@@ -1,0 +1,129 @@
+<!doctype html>
+
+<html>
+<head>
+	<title>IT'S TIME!</title>
+	<meta charset="utf-8" />
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+
+<!--This was made as a joke a while back for a friend who gets obsessive about Bruce Buffer (the UFC commentator) when he is drunk. I wrote this as I was just beginning to learn and it is pretty awful. This was posted as a benchmark-->
+
+<body>
+
+	
+	<div>
+		<h2 class="text"> It's your time!</h2>
+		<p class="text"> Click Bruce Buffer as fast as you can! </p>
+
+		<p id="copy"> Your time: <span id="time"> </span>
+		<div id="bruce1" onmousedown="push.play()">	
+	</div>
+	
+		
+
+
+	</div>
+	<div id="intro">
+
+	</div>
+
+	<div id="troll">
+	</div>
+
+	<audio id="foobar" src="images/jason.mp3" preload="auto">
+
+
+
+	<script type="text/Javascript">
+
+
+		var audio = document.getElementById("foobar");
+		audio.play();
+
+
+
+		var push = new Audio();
+		push.src = "images/push.mp3";
+
+		var clickedTime;  var createdTime; var reactionTime;
+
+		Date.now();
+
+
+
+
+		function bruceTimer(){
+
+
+		document.getElementById('intro').style.display="none";
+		}
+
+		setTimeout(bruceTimer, 8500);
+
+		function bruceTimers(){
+
+
+		document.getElementById('troll').style.display="none";
+		}
+
+		setTimeout(bruceTimers, 10000);
+
+
+		function makeBox(){
+
+
+			
+
+			var time=Math.random();
+
+			time=time*3000;
+
+			setTimeout(function() {
+
+				var top=Math.random();
+
+				top=top*300
+
+				var left=Math.random();
+
+				left=left*500;
+
+				document.getElementById("bruce1").style.top=top+"px";
+
+				document.getElementById("bruce1").style.left=left+"px";
+
+				document.getElementById("bruce1").style.display="block";
+
+				createdTime=Date.now();
+
+		
+			},	time);
+
+		
+		}
+
+		document.getElementById("bruce1").onclick=function() {
+
+			clickedTime=Date.now();
+
+			reactionTime=(clickedTime-createdTime)/1000;
+
+			document.getElementById("time").innerHTML=reactionTime+" seconds.";
+
+			this.style.display="none";
+
+			makeBox();			
+
+	}
+	makeBox();	
+
+	
+
+	</script>
+</body>
+</html>
